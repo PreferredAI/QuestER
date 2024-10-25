@@ -127,7 +127,6 @@ class QuestERStratifiedSplit(StratifiedSplit):
             self.item_text,
             self.item_image,
             self.item_graph,
-            self.qa_text,
         ]:
             if item_modality is None:
                 continue
@@ -162,7 +161,6 @@ class QuestERStratifiedSplit(StratifiedSplit):
             item_graph=self.item_graph,
             sentiment=self.sentiment,
             review_text=self.review_text,
-            qa_text=self.qa_text,
             review_and_item_qa_text=self.review_and_item_qa_text
         )
 
@@ -181,7 +179,6 @@ class QuestERStratifiedSplit(StratifiedSplit):
         self.item_graph = kwargs.get("item_graph", None)
         self.sentiment = kwargs.get("sentiment", None)
         self.review_text = kwargs.get("review_text", None)
-        self.qa_text = kwargs.get("qa_text", None)
         self.review_and_item_qa_text = kwargs.get("review_and_item_qa_text", None)
 
         for data_set in [self.train_set, self.test_set, self.val_set]:
@@ -199,5 +196,4 @@ class QuestERStratifiedSplit(StratifiedSplit):
                 sentiment=self.sentiment,
                 review_text=self.review_text,
                 review_and_item_qa_text=self.review_and_item_qa_text,
-                qa_text=self.qa_text,
             )
