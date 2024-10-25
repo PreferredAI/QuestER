@@ -1,4 +1,4 @@
-cornac
-tensorflow==2.6
+cornac==2.2.2
+tensorflow-gpu==2.6
 keras==2.6
 protobuf==3.20

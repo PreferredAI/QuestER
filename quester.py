@@ -925,7 +925,7 @@ class QuestER(Recommender):
             Relative scores that the user gives to the item or to all known items
         """
         if item_idx is None:
-            if self.train_set.is_unk_user(user_idx):
+            if self.is_unknown_user(user_idx):
                 raise ScoreException(
                     "Can't make score prediction for (user_id=%d)" % user_idx
                 )
@@ -933,7 +933,7 @@ class QuestER(Recommender):
             known_item_scores = h0.dot(self.W1) + self.bu[user_idx] + self.bi + self.mu
             return known_item_scores.ravel()
         else:
-            if self.train_set.is_unk_user(user_idx) or self.train_set.is_unk_item(
+            if self.is_unknown_user(user_idx) or self.is_unknown_item(
                 item_idx
             ):
                 raise ScoreException(
