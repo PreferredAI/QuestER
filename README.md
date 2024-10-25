@@ -47,6 +47,8 @@ We used Glove 6B tokens, 400K vocab, 100d vectors as pretrained word embeddings,
 
 
 ```bash
+conda create --name quester python==3.9
+conda activate quester
 pip install -r requirements.txt
 ```
 
